@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Controle Car</title>
+    <link rel="stylesheet" href="icons/material.css">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <div class="topo-fixo z-depth-5">
+        <div class="green darken-3 white-text valign-wrapper">
+            <h5 class="titulo">Controle Car</h5>
+      
+    </div>
+            <input type="hidden" id="veiculos_id_update">
+            <input type="hidden" id="veiculos_id_delete">
+
+            <ul class = "tabs yellow darken-4 lighten-2">
+                <li class= "tab"><a href="#cadastro"class="white-text">Cadastro</a></li>
+                <li class= "tab"><a href="#manutencao"class="white-text">Manutencao</a></li>
+                <li class= "tab"><a href="#gasto"class="white-text">Gastos</a></li>
+                <li class= "tab"><a href="#combustivel"class="white-text">Tipos de combustiveis</a></li>
+                <li class= "tab"><a href="#adc"class="white-text">Adcionais</a></li>
+                <li class= "tab"><a href="#vei"class="white-text">Resultado</a></li>
+                </ul>   
+
+                <div class="section" id="splash">
+                    <div class= "white lighten-3 black-text valign-wrapper">
+                        <figure class="gif">
+                            <img id="foto" src="css/icon.png" class="img-thumbnail">
+                        </figure>
+                    </div>
+                </div>
+
+<div class="section" id="cadastro">
+    <h6 class="container red-text">Informações dos veiculos</h6><br><br>
+        <form id="form-dolar">
+            <label for="marca">Marca:</label>
+            <input id="cadmarca" name="marca" type="text"><br>
+            <label for="modelo">Modelo:</label>
+            <input id="cadmodelo" name="modelo" type="text"><br>
+            <label for="ano">Ano:</label>
+            <input id="cadano" name="ano" type="text"><br>
+            <label for="cor">Cor:</label>
+            <input id="cadcor" name="cor" type="text"><br>
+            <label for="quilometragem">Quilometragem:</label>
+            <input id="cadquilometragem" name="quilometragem" type="text"><br>
+            <label for="valor">Valor da tabela FIPI:</label>
+            <input id="cadvalor" name="valor" type="text"><br>
+            <button id="cadastrar" class="waves-effect waves-light btn-large" onclick="add()">Cadastrar</button><br><br>
+        </form>
+        </div>
+
+        <div class="section" id="edicao">
+            <input type="button" class="btn btn-lg btn-primary form-control" value="Voltar" onclick="veiculos_edicao_fechar_tela()"><br><br>
+            <h4 class="container green-text">Editar</h4><br><br>
+            <form id="editar-cadastro">
+            <label for="marca">Marca:</label>
+            <input id="editmarca" name="emarca" type="text"><br>
+            <label for="modelo">Modelo:</label>
+            <input id="editmodelo" name="emodelo" type="text"><br>
+            <label for="ano">ano:</label>
+            <input id="editano" name="eano" type="text"><br>
+            <label for="cor">Cor:</label>
+            <input id="editcor" name="ecor" type="text"><br>
+            <label for="quilometragem">Quilometragem:</label>
+            <input id="editquilometragem" name="equilometragem" type="text"><br>
+            <label for="valor">Valor da tabela FIPI:</label>
+            <input id="editvalor" name="evalor" type="text"><br>
+            <button id="editar" class="waves-effect waves-light btn-large" onclick="agenda_atualizar()">Alterar</button>
+            <br><br>
+            </form>
+            </div>
+        <div class="section" id="manutencao">
+            <h6 class="container green-text">Manutenção</h6><br><br>
+                <form id="form-dolar">
+                    <label for="oleo">Troca de óleo:</label>
+                    <input id="cadoleo" name="oleo" type="text"><br>
+                    <label for="filtro">Filtro de óleo:</label>
+                    <input id="cadfiltro" name="filtro" type="text"><br>
+                    <label for="ar">Filtro de ar:</label>
+                    <input id="cadar" name="ar" type="text"><br>
+                    <label for="correia">Correia dentada:</label>
+                    <input id="cadcorreia" name="correia" type="text"><br>
+                    <label for="codigo">Codigo do veiculo:</label>
+                    <input id="cadcodigo" name="codigo" type="text"><br>
+                    <label for="km">Quilometros da troca de óleo:</label>
+                    <input id="cadkm" name="km" type="text"><br>
+                    <button id="cadastrar" class="waves-effect waves-light btn-large" onclick="add()">Cadastrar</button><br><br>
+                </form>
+        </div>
+        <div class="section" id="gasto">
+            <h6 class="container green-text">Controle de Gasto</h6><br><br>
+                <form id="form-dolar">
+                    <label for="Codigo">Codigo:</label>
+                    <input id="cadcodigo" name="codigo" type="text"><br>
+                    <label for="Gasto">Gasto com Veiculo:</label>
+                    <input id="cadgasto" name="gasto" type="text"><br>
+                    <label for="Data">Data:</label>
+                    <input id="caddata" name="data" type="text"><br>
+                    <label for="Valor">Valor:</label>
+                    <input id="cadvalor" name="valor" type="text"><br>
+                    <button id="cadastrar" class="waves-effect waves-light btn-large" onclick="add()">Cadastrar</button><br><br>
+                </form>
+        </div>
+        
+        <div class="section" id="combustivel">
+            <h6 class="container green-text">Combustivel a sua escolha!</h6><br><br>
+                <form id="form-dolar">
+                    <label for="Etanol"> Alcool:</label>
+                    <input id="cadetanol" name="etanol" type="text"><br>
+                    <label for="Gasolina"> Gasolina:</label>
+                    <input id="cadgasolina" name="gasolina" type="text"><br>
+                    <button id="cadastrar" class="waves-effect waves-light btn-large" onclick="add()">Cadastrar</button><br><br>
+                </form>
+        </div>
+
+
+        <div class="section" id="adc">
+            <h6 class="container green-text">Troca e etc</h6><br><br>
+            <p><img src="img/ram.png" alt="Car" width ="250" height"250"></p>
+                <form id="form-dolar">
+                    <label for="Tipo">Tipo de óleo:</label>
+                    <input id="cadtipo" name="tipo" type="text"><br>
+                    <label for="Calibragem">Calibragem do pneu:</label>
+                    <input id="cadcalibragem" name="calibragem" type="text"><br>
+                    <button id="cadastrar" class="waves-effect waves-light btn-large" onclick="add()">Cadastrar</button><br><br>
+                </form>
+        </div>
+        <div class="section" id="vei">
+            <table class="table">
+            <thead>
+            <tr>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Ano</th>
+            <th>Cor</th>
+            <th>Quilometragem</th>
+            <th>Valor da tabela fipe</th>
+            </tr>
+            <tr>
+                <th>Troca de Oleo </th>
+                <th>Filtro de oleo</th>
+                <th>Filtro de ar</th>
+                <th>Correia dentada</th>
+                <th>Codigo do veiculo</th>
+                <th>Quilometragem da troca de oleo</th>
+                </tr>
+                <tr>
+                    <th>gasto do veiculo </th>
+                    <th>gasto com veiculo</th>
+                    <th>data </th>
+                    <th>valor</th>
+                    </tr>
+                    <tr>
+                        <th>Alcool</th>
+                        <th>Gasolina</th>
+                        </tr>
+                        <tr>
+                            <th>Troca de oleo </th>
+                            <th>Calibragem do pneu</th>
+                            </tr
+
+            </thead>
+            <tbody id="veiculo-listagem">
+            </tbody>
+            </table>
+            </div>
+            <div> <button id="consulta" class="waves-effect waves-light btn-large" onclick="agenda_consulta()">Consulta</button><br><br></div>
+            <script type="text/javascript" src="cordova.js"></script>
+            </div>
+            <div class="footer-copyright ">
+                <div class="container black-text">
+                © 2019 1.0
+                </div>
+              </div>
+            
+
+    <script type="text/javascript" src="cordova.js"></script>            
+    <script src="js/jquery.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/veiculos.js"></script>
+</body>
+</html>

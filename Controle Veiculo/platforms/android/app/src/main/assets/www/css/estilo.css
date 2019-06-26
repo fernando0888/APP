@@ -1,0 +1,35 @@
+p{
+    text-align: center;
+}
+.footer-copyright{
+    text-align: center;
+    color: black;
+    position: left;
+    bottom: 0;
+    width: 100%;
+    background-color:rgb(252, 92, 0)
+    
+}
+.titulo{
+    margin: 20px;
+    text-align: center;
+}
+#table caption{
+    background-color: black;
+    color:white;
+    font-size: 1.5em;
+    font-family: Courier New;
+}
+#th{
+    padding: 10px;
+    
+    
+}
+.titulo{
+    text-align: center;
+
+}
+h6{
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+}
